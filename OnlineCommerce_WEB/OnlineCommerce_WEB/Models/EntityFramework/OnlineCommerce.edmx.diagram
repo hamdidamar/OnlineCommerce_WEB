@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5b1479d32a94099bae5b99303d5e94a" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineCommerceModel.Accounts" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.AccountTypes" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Admins" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Categories" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Companies" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Customers" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Orders" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Products" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Accounts_AccountTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Admins_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Companies_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Customers_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Products_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
