@@ -1,0 +1,56 @@
+﻿@model OnlineCommerce_WEB.Models.EntityFramework.Accounts
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Accounts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountTypes.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountTypes.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Companies.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Companies.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

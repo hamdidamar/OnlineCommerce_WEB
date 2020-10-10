@@ -1,0 +1,50 @@
+﻿@model OnlineCommerce_WEB.Models.EntityFramework.Accounts
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accounts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountTypes.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountTypes.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Companies.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Companies.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
