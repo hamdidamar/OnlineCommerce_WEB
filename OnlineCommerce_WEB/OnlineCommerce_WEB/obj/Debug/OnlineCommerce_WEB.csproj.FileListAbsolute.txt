@@ -79,3 +79,4 @@ C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.dll
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.pdb
+C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csprojResolveAssemblyReference.cache
