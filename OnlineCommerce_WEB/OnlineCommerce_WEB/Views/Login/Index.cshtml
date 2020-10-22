@@ -1,7 +1,7 @@
 ﻿@using OnlineCommerce_WEB.Models
 @model LoginEntity
 @{
-    Layout = null;
+    ViewBag.Title = "Login";
 }
 
 
@@ -39,6 +39,8 @@
     </div>
     <div class="container body-content">
         <div class="form-horizontal">
+            <h2>Login Page</h2>
+            <hr />
             @* Login Sayfası Başlangıcı *@
             @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {

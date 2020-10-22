@@ -1,10 +1,10 @@
 ﻿@model OnlineCommerce_WEB.Models.EntityFramework.Accounts
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Register";
 }
 
-<h2>Create</h2>
+<h2>Register Page</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Accounts</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

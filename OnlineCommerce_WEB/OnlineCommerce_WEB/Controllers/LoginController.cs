@@ -32,6 +32,7 @@ namespace OnlineCommerce_WEB.Controllers
                 {
                     Response.Write("<script>alert('Giriş Başarılı')</script>");
                     entity.IsLogin = true;
+
                 }
                 else
                 {
