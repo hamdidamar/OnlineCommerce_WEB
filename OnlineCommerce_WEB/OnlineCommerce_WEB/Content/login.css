@@ -1,0 +1,82 @@
+﻿body {
+}
+
+
+.login-content {
+    display: flex;
+    flex-basis: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 24em;
+    height: 30em;
+    justify-content: space-around;
+    padding: 72px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 5%;
+}
+@media (max-width:300px) {
+    .login-form {
+    min-width: 19em;
+    }
+}
+.form-input {
+    align-items: baseline;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.form-button {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.form-button > div{
+    width: 7em;
+}
+
+    .form-button > div > input {
+        width: 100%;
+        -webkit-box-align: center;
+        align-items: center;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: flex;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 600;
+        -webkit-box-pack: center;
+        justify-content: center;
+        outline: none;
+        padding: 8px;
+        position: relative;
+        text-decoration: none;
+        background-color: rgb(255, 96, 0);
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        border: none;
+    }
+
+.login-form > div > div > input {
+    border-radius: 6px;
+    border-color: rgba(0,0,0,0.2);
+}
+
+/*TODO: Company Right Text'i main.css oluşturup oraya taşı*/
+.company-right-text-area{
+    position: absolute;
+    bottom: 2em;
+}
+
+p {
+    margin: unset !important;
+}

@@ -38,42 +38,39 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="form-horizontal">
-            <h2>Login Page</h2>
+        <div class="login-content">
+            <h2>E-Commerce ACDHE</h2>
             <hr />
             @* Login Sayfası Başlangıcı *@
-            @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
             {
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                <div class="form-input">
+                    @Html.LabelFor(m => m.Username)
+                    <div>
                         @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
                     </div>
                 </div>
 
 
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                <div class="form-input">
+                    @Html.LabelFor(m => m.Password)
+                    <div>
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
+                <div class="form-button">
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Create", "Accounts")
+                    </p>
+                    <div>
+                        <input type="submit" value="Log in" class="btn btn-warning" />
                     </div>
                 </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Create", "Accounts")
-                </p>
+
             }
         </div>
         @* Login Sayfası Sonu *@
-        <hr />
-        <footer>
-            2020 Online Commerce Web Application
-        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
