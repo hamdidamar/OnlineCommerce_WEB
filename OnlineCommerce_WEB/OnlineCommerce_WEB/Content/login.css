@@ -2,7 +2,7 @@
 }
 
 
-.login-content {
+.login-content,.register-content {
     display: flex;
     flex-basis: inherit;
     flex-direction: column;
@@ -11,7 +11,7 @@
     margin-top: 10%;
 }
 
-.login-form {
+.login-form,.register-form {
     display: flex;
     flex-direction: column;
     width: 45%;
@@ -23,48 +23,60 @@
     border-radius: 8px;
     padding: 5%;
 }
+
 @media (max-width:300px) {
-    .login-form {
-    min-width: 19em;
+    .login-form,.register-form {
+        min-width: 19em;
     }
 }
+
 .form-input {
     align-items: baseline;
     display: inline-flex;
     justify-content: space-between;
 }
 
-.form-button {
+.form-button, .form-one-button {
     display: inline-flex;
     align-items: baseline;
+
+}
+
+.form-button {
     justify-content: space-between;
 }
-
-.form-button > div{
-    width: 7em;
+.form-one-button {
+    justify-content: flex-end;
 }
-
-    .form-button > div > input {
-        width: 100%;
-        -webkit-box-align: center;
-        align-items: center;
-        box-sizing: border-box;
-        cursor: pointer;
-        display: flex;
-        font-stretch: normal;
-        font-style: normal;
-        font-weight: 600;
-        -webkit-box-pack: center;
-        justify-content: center;
-        outline: none;
-        padding: 8px;
-        position: relative;
-        text-decoration: none;
-        background-color: rgb(255, 96, 0);
-        color: rgb(255, 255, 255);
-        font-size: 16px;
-        border: none;
+    .form-button > div {
+        width: 7em;
     }
+
+    .form-one-button > div{
+        width: 14em;
+    }
+
+        .form-button > div > input, .form-one-button > div > input {
+            width: 100%;
+            -webkit-box-align: center;
+            align-items: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: flex;
+            font-stretch: normal;
+            font-style: normal;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            outline: none;
+            padding: 8px;
+            position: relative;
+            text-decoration: none;
+            background-color: rgb(255, 96, 0);
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            border: none;
+        }
 
 .login-form > div > div > input {
     border-radius: 6px;
@@ -72,7 +84,7 @@
 }
 
 /*TODO: Company Right Text'i main.css oluşturup oraya taşı*/
-.company-right-text-area{
+.company-right-text-area {
     position: absolute;
     bottom: 2em;
 }
