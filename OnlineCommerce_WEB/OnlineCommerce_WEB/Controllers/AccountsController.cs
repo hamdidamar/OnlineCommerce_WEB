@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineCommerce_WEB.Models.EntityFramework;
 using System.Web.UI;
+using OnlineCommerce_WEB.ApiEntities;
+using OnlineCommerce_WEB.Apis;
 
 namespace OnlineCommerce_WEB.Controllers
 {
@@ -42,6 +44,29 @@ namespace OnlineCommerce_WEB.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
+                    SmtpMailEntity mailEntity = new SmtpMailEntity
+                    {
+                        senderEMailAdress = "anonimepostam99@gmail.com",
+                        receiverEMailAdress = accounts.Username,
+                        senderMailUsername = "anonimepostam99@gmail.com",
+                        senderMailPassword = "a1999_1997",
+                        subject = "Registered E Commerce",
+                        body = "Thanks for be registered E Commerce Family"
+                        + Environment.NewLine
+                        + "Your username: " + accounts.Username
+                        +Environment.NewLine
+                        + "Your password: " + accounts.Password
+                        + Environment.NewLine 
+                        +"Love,"
+                        +Environment.NewLine +
+                        "E Commerce Family"
+                    };
+
+                    SmtpMailApi smtpMailApi = SmtpMailApi.Instance;
+                    smtpMailApi.SendEMail(mailEntity);
+
+
                     accounts.AccountTypeID = 2;
                     db.Accounts.Add(accounts);
                     db.SaveChanges();
