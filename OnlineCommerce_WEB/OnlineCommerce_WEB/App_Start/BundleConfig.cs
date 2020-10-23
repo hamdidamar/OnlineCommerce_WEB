@@ -26,7 +26,8 @@ namespace OnlineCommerce_WEB
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/login.css"));
+                      "~/Content/login.css",
+                      "~/Content/home.css"));
         }
     }
 }
