@@ -33,6 +33,13 @@ namespace OnlineCommerce_WEB.Controllers
                     Response.Write("<script>alert('Giriş Başarılı')</script>");
                     entity.IsLogin = true;
 
+                    // Giriş yapan kullanıcnın bilgilerini alıyoruz.
+                    CurrentLoginEntity.IsLogin = true;
+                    CurrentLoginEntity.Username = entity.Username;
+                    CurrentLoginEntity.Password = entity.Password;
+
+                    return Redirect("/Products");// Giriş yaptıktan sonra ürünler sayfasına yönlendiriyor
+
                 }
                 else
                 {
@@ -48,6 +55,10 @@ namespace OnlineCommerce_WEB.Controllers
             return View();
         }
 
-
+        public RedirectResult Logout()
+        {
+            CurrentLoginEntity.IsLogin = false;
+            return Redirect("/Home"); // Çıkış yaptıktan sonra ana sayfaya yönlendiriyor.
+        }
     }
 }

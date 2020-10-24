@@ -32,8 +32,19 @@
                     @*<li>@Html.ActionLink("Accounts", "Index", "Accounts")</li>*@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                    </ul>
+                    @if (CurrentLoginEntity.IsLogin)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
+                            <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
+                        </ul>
+                    }
+                    @if (CurrentLoginEntity.IsLogin == false)
+                    {
+                        @Html.Partial("_LoginPartial")
+                    }
+                
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using OnlineCommerce_WEB.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,6 +7,7 @@
     <title>@ViewBag.Title - Online Commerce</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Footer.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -26,19 +28,64 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @if (CurrentLoginEntity.IsLogin)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
+                        <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
+                    </ul>
+                }
+                @if (CurrentLoginEntity.IsLogin == false)
+                {
+                    @Html.Partial("_LoginPartial")
+                }
+
+
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <div class="company-right-text-area">
-            <hr />
-            <footer>
-                2020 Online Commerce Web Application
-            </footer>
+    </div>
+
+
+    @* Footer Başlangıç *@
+    <div style="padding-top:inherit">
+        <div class="mt-5 pt-5 pb-5 footer" style="color:#999999">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-xs-12 about-company">
+                        <h2>Online Commerce</h2>
+                        <p class="pr-5 text-white-50">New center of online commerce! </p>
+                        <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 links">
+                        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                        <ul class="m-0 p-0">
+                            <li>- <a href="/Home">Home</a></li>
+                            <li>- <a href="/Products">Products</a></li>
+                            <li>- <a href="/Home/About">About</a></li>
+                            <li>- <a href="/Home/Contact">Contact</a></li>
+                            <li>- <a href="/Accounts/Create">Register</a></li>
+                            <li>- <a href="/Login">Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+                        <p>Turgutlu / Manisa / Turkey</p>
+                        <p class="mb-0"><i class="fa fa-phone mr-3"></i>+905000000000</p>
+                        <p><i class="fa fa-envelope-o mr-3"></i>onlinecommerce@cbu.edu.tr</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2020. All Rights Reserved. Online Commerce</small></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    @* Footer Sonu *@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
