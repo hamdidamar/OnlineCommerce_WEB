@@ -79,6 +79,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="OnlineCommerceModel.Products">
         <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />

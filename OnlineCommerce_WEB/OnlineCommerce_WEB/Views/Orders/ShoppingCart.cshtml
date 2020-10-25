@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "ShoppingCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Shoppping Cart</h2>
+
+@if (TempData["shoppingList"] != null)
+{
+    <table class="table-bordered">
+        <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Bill</th>
+        </thead>
+
+        <tbody>
+            @foreach (var item in TempData["shoppingList"] as List<OnlineCommerce_WEB.Models.ShoppingCart>)
+            {
+                <tr>
+                    <td>@item.productName</td>
+                    <td>@item.price</td>
+                    <td>@item.amount</td>
+                    <td>@item.bill</td>
+
+                    <form method="post"  action="@Url.Action("DeleteFromCart/"+ item.productID)">
+                        <td><button class="btn btn-danger">Delete</button></td>
+                    </form>
+                </tr>
+            }
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td>
+                    <p style="text-align:center"> <b> Total Bill : @TempData["TotalBill"]</b> </p>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+}
+else
+{
+    <h4>Your shopping cart is empty</h4>
+}
+
+<script>
+
+</script>

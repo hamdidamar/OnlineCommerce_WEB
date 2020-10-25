@@ -84,6 +84,7 @@
           <Property Name="Stock" Type="decimal" Precision="18" Scale="2" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="CompanyID" Type="int" />
+          <Property Name="Amount" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -333,6 +334,7 @@
           <NavigationProperty Name="Categories" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="Companies" Relationship="Self.FK_Products_Companies" FromRole="Products" ToRole="Companies" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Products" FromRole="Products" ToRole="Orders" />
+          <Property Name="Amount" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -567,6 +569,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="OnlineCommerceModel.Products">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />

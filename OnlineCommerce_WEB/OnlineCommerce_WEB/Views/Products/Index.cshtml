@@ -10,15 +10,16 @@
     @*@@Html.ActionLink("Create New", "Create")**@
 </p>
 
-<div class="card">
+<div class="row">
     @foreach (var item in Model)
     {
-
-        <img src="~/Content/Images/iphone.jpg" style="width:25%">
-        <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
-        <p class="price">@Html.DisplayFor(modelItem => item.Price)</p>
-        <p><button>Add to Cart</button></p>
-
+        <div class="col-md-4">
+            <img src="~/Content/Images/iphone.jpg" style="width:25%">
+            <h4 style="text-align:center">@item.Name</h4>
+            <h5 style="text-align:center">@item.Price</h5>
+            <a class="btn btn-primary" href="/Products/Details/@item.ID"> Details</a>
+            
+        </div>
     }
 </div>
 

@@ -79,6 +79,7 @@
     <Property Name="Stock" Type="decimal" Precision="18" Scale="2" />
     <Property Name="CategoryID" Type="int" />
     <Property Name="CompanyID" Type="int" />
+    <Property Name="Amount" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

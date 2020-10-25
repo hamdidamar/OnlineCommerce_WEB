@@ -27,6 +27,7 @@ namespace OnlineCommerce_WEB.Models.EntityFramework
         public Nullable<decimal> Stock { get; set; }
         public Nullable<int> CategoryID { get; set; }
         public Nullable<int> CompanyID { get; set; }
+        public Nullable<int> Amount { get; set; }
     
         public virtual Categories Categories { get; set; }
         public virtual Companies Companies { get; set; }

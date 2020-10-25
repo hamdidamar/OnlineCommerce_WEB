@@ -31,6 +31,7 @@
                 @if (CurrentLoginEntity.IsLogin)
                 {
                     <ul class="nav navbar-nav navbar-right">
+                        <li> @Html.ActionLink("My Cart", "ShoppingCart", "Orders") </li> 
                         <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
                         <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
                     </ul>

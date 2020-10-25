@@ -95,6 +95,7 @@
     <NavigationProperty Name="Categories" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
     <NavigationProperty Name="Companies" Relationship="Self.FK_Products_Companies" FromRole="Products" ToRole="Companies" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Products" FromRole="Products" ToRole="Orders" />
+    <Property Name="Amount" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
