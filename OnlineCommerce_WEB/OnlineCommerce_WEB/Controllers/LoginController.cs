@@ -28,7 +28,9 @@ namespace OnlineCommerce_WEB.Controllers
             {
                 var pass = db.Accounts.Where(p => p.Username == entity.Username).FirstOrDefault<Accounts>();
 
-                if (pass.Password == entity.Password) // Veri tabanındaki şifre ile aynı mı kontrolü
+                Encryption enc = new Encryption();
+
+                if (pass.Password == entity.Password || enc.Decrypt(pass.Password) == entity.Password) // Veri tabanındaki şifrelenmiş şifre ile aynı mı kontrolü
                 {
                     Response.Write("<script>alert('Giriş Başarılı')</script>");
                     entity.IsLogin = true;

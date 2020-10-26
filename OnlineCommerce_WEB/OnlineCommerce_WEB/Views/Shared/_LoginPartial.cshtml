@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using OnlineCommerce_WEB.Models
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -16,7 +17,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li> @Html.ActionLink("My Cart", "ShoppingCart", "Orders") </li> 
+        <li> @Html.ActionLink("My Cart"+GlobalVariables.CartProductCount, "ShoppingCart", "Orders") </li> 
         <li>@Html.ActionLink("Register", "Create", "Accounts", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>  
         <li>@Html.ActionLink("Log in", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>

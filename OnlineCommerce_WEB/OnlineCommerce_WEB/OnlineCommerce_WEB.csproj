@@ -202,6 +202,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\Encryption.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Models\EntityFramework\sysdiagrams.cs">
       <DependentUpon>OnlineCommerce.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GlobalVariables.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginEntity.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

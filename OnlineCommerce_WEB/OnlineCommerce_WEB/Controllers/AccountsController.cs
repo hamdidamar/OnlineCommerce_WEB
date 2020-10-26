@@ -68,6 +68,10 @@ namespace OnlineCommerce_WEB.Controllers
 
 
                     accounts.AccountTypeID = 2;
+
+                    Encryption enc = new Encryption();
+                    accounts.Password = enc.Encrypt(accounts.Password); // Şifreleme işlemi yapılarak veri tabanına ekliyoruz.
+
                     db.Accounts.Add(accounts);
                     db.SaveChanges();
                     return RedirectToAction("Index", "Login");

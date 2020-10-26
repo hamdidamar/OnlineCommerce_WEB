@@ -64,6 +64,8 @@ namespace OnlineCommerce_WEB.Controllers
             
             TempData.Keep();
 
+            GlobalVariables.CartProductCount += 1;
+
             return Redirect("/Products");
         }
 
@@ -83,6 +85,9 @@ namespace OnlineCommerce_WEB.Controllers
             TempData["TotalBill"] = shoppingList.Sum(c => c.bill);
 
             TempData["shoppingList"] = shoppingList;
+
+            GlobalVariables.CartProductCount -= 1;
+
             return Redirect("/Orders/ShoppingCart");
 
         }
