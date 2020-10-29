@@ -32,7 +32,15 @@
                 {
                     <ul class="nav navbar-nav navbar-right">
                         <li> @Html.ActionLink("My Cart" + GlobalVariables.CartProductCount, "ShoppingCart", "Orders") </li> 
-                        <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
+                        @if (CurrentLoginEntity.Name != null)
+                        {
+                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Name, "Index", "Customer") </li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Customer") </li>
+                        }
+                         
                         <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
                     </ul>
                 }

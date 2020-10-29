@@ -1,0 +1,122 @@
+﻿@using OnlineCommerce_WEB.Models
+@using OnlineCommerce_WEB.Models.EntityFramework
+@model OnlineCommerce_WEB.Models.EntityFramework.Customers
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (CurrentLoginEntity.IsLogin)
+{
+    try
+    {
+        <h2>Hoşgeldin @CurrentLoginEntity.Name</h2>
+    }
+    catch
+    {
+        <h2> Hoşgeldin @CurrentLoginEntity.Username</h2>
+    }
+    using (Html.BeginForm("Edit", "Customer", new { accountID = CurrentLoginEntity.ID }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+    {
+        OnlineCommerceEntities db = new OnlineCommerceEntities();
+
+        try
+        {
+            var entity = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name) :
+                </dt>
+
+                <dd>
+                    <input id="Name" name="Name" type="text" value="@entity.Name" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Surname) :
+                </dt>
+
+                <dd>
+                    <input id="Surname" name="Surname" type="text" value="@entity.Surname" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone) :
+                </dt>
+
+                <dd>
+                    <input id="Phone" name="Phone" type="text" value="@entity.Phone" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mail) :
+                </dt>
+
+                <dd>
+                    <input id="Mail" name="Mail" type="text" value="@entity.Mail" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address) :
+                </dt>
+
+                <dd>
+                    <input id="Address" name="Address" type="text" value="@entity.Address" />
+                </dd>
+
+            </dl>
+        }
+        catch
+        {
+            <dl class="dl-horizontal">
+                
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Surname) :
+                </dt>
+
+                <dd>
+                    <input id="Surname" name="Surname" type="text" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone) :
+                </dt>
+
+                <dd>
+                    <input id="Phone" name="Phone" type="text" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mail) :
+                </dt>
+
+                <dd>
+                    <input id="Mail" name="Mail" type="text" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address) :
+                </dt>
+
+                <dd>
+                    <input id="Address" name="Address" type="text" />
+                </dd>
+
+            </dl>
+        }
+
+
+        <form method="post" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
+            <button class="btn btn-info">Update</button>
+        </form>
+
+    }
+}
+else
+{
+    <h2>Önce Giriş Yapmalısın!</h2>
+}
+
