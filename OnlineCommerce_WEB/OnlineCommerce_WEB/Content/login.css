@@ -2,13 +2,14 @@
 }
 
 
-.login-content,.register-content {
+.login-content, .register-content {
     display: flex;
     flex-basis: inherit;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 10%;
+    width: 75%;
+    margin: auto;
 }
 
 .login-form,.register-form {

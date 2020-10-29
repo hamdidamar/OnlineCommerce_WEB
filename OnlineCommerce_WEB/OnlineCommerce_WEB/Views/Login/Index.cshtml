@@ -32,57 +32,57 @@
                     @*<li>@Html.ActionLink("Accounts", "Index", "Accounts")</li>*@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @if (CurrentLoginEntity.IsLogin)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
+                        <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
                     </ul>
-                    @if (CurrentLoginEntity.IsLogin)
-                    {
-                        <ul class="nav navbar-nav navbar-right">
-                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
-                            <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
-                        </ul>
-                    }
-                    @if (CurrentLoginEntity.IsLogin == false)
-                    {
-                        @Html.Partial("_LoginPartial")
-                    }
-                
+                }
+                @if (CurrentLoginEntity.IsLogin == false)
+                {
+                    @Html.Partial("_LoginPartial")
+                }
+
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        <div class="login-content">
-            <h2>E-Commerce ACDHE</h2>
-            <hr />
-            @* Login Sayfası Başlangıcı *@
-            @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
-            {
-                <div class="form-input">
-                    @Html.LabelFor(m => m.Username)
-                    <div>
-                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-                    </div>
+
+    <div class="login-content">
+        <h2>E-Commerce ACDHE</h2>
+        <hr />
+        @* Login Sayfası Başlangıcı *@
+        @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+        {
+            <div class="form-input">
+                @Html.LabelFor(m => m.Username)
+                <div>
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
                 </div>
+            </div>
 
 
-                <div class="form-input">
-                    @Html.LabelFor(m => m.Password)
-                    <div>
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                    </div>
+            <div class="form-input">
+                @Html.LabelFor(m => m.Password)
+                <div>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                 </div>
+            </div>
 
-                <div class="form-button">
-                    <p>
-                        @Html.ActionLink("Register as a new user", "Create", "Accounts")
-                    </p>
-                    <div>
-                        <input type="submit" value="Log in" class="btn btn-warning" />
-                    </div>
+            <div class="form-button">
+                <p>
+                    @Html.ActionLink("Register as a new user", "Create", "Accounts")
+                </p>
+                <div>
+                    <input type="submit" value="Log in" class="btn btn-warning" />
                 </div>
+            </div>
 
-            }
-        </div>
-        @* Login Sayfası Sonu *@
+        }
     </div>
+    @* Login Sayfası Sonu *@
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
