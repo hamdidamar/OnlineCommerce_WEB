@@ -4,21 +4,26 @@
     ViewBag.Title = "Products Page";
 }
 
-<h2>Product List</h2>
+<h2 class="text-align-center">Product List</h2>
 
 <p>
     @*@@Html.ActionLink("Create New", "Create")**@
 </p>
 
-<div class="row">
+<div class="product-catalog">
     @foreach (var item in Model)
     {
-        <div class="col-md-4">
-            <img src="~/Content/Images/iphone.jpg" style="width:25%">
-            <h4 style="text-align:center">@item.Name</h4>
-            <h5 style="text-align:center">@item.Price</h5>
-            <a class="btn btn-primary" href="/Products/Details/@item.ID"> Details</a>
-            
+        <div class="product-area">
+            <div class="product-content">
+                <div>
+                    <img src="~/Content/Images/iphone.jpg">
+                </div>
+                <div class="product-info-area">
+                    <h4>@item.Name</h4>
+                    <h5>@item.Price</h5>
+                    <a class="btn btn-primary" href="/Products/Details/@item.ID"> Details</a>
+                </div>
+            </div>
         </div>
     }
 </div>

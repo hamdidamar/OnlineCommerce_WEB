@@ -1,0 +1,86 @@
+﻿@using OnlineCommerce_WEB.Models
+@using OnlineCommerce_WEB.Models.EntityFramework;
+@model OnlineCommerce_WEB.Models.EntityFramework.Customers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+@if (CurrentLoginEntity.IsLogin)
+{
+    try
+    {
+        <h2>Hoşgeldin @CurrentLoginEntity.Name</h2>
+    }
+    catch
+    {
+        <h2 > Hoşgeldin @CurrentLoginEntity.Username</h2>
+    }
+
+    OnlineCommerceEntities db = new OnlineCommerceEntities();
+    var customer = (from c in db.Customers where c.AccountID == CurrentLoginEntity.ID select c).FirstOrDefault();
+
+    if (customer != null)
+    {
+
+        <dl class="dl-horizontal">
+            <dt>
+               Name :
+            </dt>
+
+            <dd>
+                @customer.Name
+            </dd>
+            <dt>
+                Surname :
+            </dt>
+
+            <dd>
+                @customer.Surname
+            </dd>
+            <dt>
+                Phone :
+            </dt>
+
+            <dd>
+                @customer.Phone
+            </dd>
+            <dt>
+                Mail :
+            </dt>
+
+            <dd>
+                @customer.Mail
+            </dd>
+            <dt>
+                Adress :
+            </dt>
+
+            <dd>
+                @customer.Address
+            </dd>
+        </dl>
+
+        <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
+            <button class="btn btn-info">Update</button>
+        </form>
+    }
+    else
+    {
+        <h2>Önce Bilgilerini Güncellemelisin</h2>
+
+        <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
+            <button class="btn btn-info">Update</button>
+        </form>
+
+
+    }
+}
+else
+{
+    <h2>Önce Giriş Yapmalısın!</h2>
+}
+
+

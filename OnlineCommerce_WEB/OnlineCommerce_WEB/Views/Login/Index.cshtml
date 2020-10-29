@@ -33,10 +33,20 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
                 @if (CurrentLoginEntity.IsLogin)
                 {
                     <ul class="nav navbar-nav navbar-right">
-                        <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Home") </li> @*// Müşteri Sayfasına Yönlendirilecek*@
+
+                        <li> @Html.ActionLink("My Cart" + GlobalVariables.CartProductCount, "ShoppingCart", "Orders") </li>
+                        @if (CurrentLoginEntity.Name != null)
+                        {
+                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Name, "Index", "Customer") </li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink("Hello \t" + CurrentLoginEntity.Username, "Index", "Customer") </li>
+                        }
                         <li> @Html.ActionLink("Log Out", "Logout", "Login") </li> @* Log out yapacak*@
                     </ul>
                 }

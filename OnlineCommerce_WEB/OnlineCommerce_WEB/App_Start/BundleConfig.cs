@@ -27,6 +27,7 @@ namespace OnlineCommerce_WEB
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/login.css",
+                      "~/Content/product.css",
                       "~/Content/home.css"));
         }
     }

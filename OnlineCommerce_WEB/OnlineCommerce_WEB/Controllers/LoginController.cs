@@ -21,7 +21,7 @@ namespace OnlineCommerce_WEB.Controllers
         public ActionResult Index(LoginEntity entity)
         {
             var user = (from u in db.Accounts
-                            where u.Username == entity.Username
+                        where u.Username == entity.Username
                         select u).Any();
 
             if (user) // Kullanıcı adı varmı kontrolü
@@ -36,9 +36,23 @@ namespace OnlineCommerce_WEB.Controllers
                     entity.IsLogin = true;
 
                     // Giriş yapan kullanıcnın bilgilerini alıyoruz.
+                    CurrentLoginEntity.ID = (from u in db.Accounts
+                                             where u.Username == entity.Username
+                                             select u.ID).FirstOrDefault();
                     CurrentLoginEntity.IsLogin = true;
                     CurrentLoginEntity.Username = entity.Username;
                     CurrentLoginEntity.Password = entity.Password;
+
+                    try // Giriş yapan kullanıcı bilgilerini dolduruyoruz
+                    {
+                        var en = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
+                        CurrentLoginEntity.Name = en.Name;
+                    }
+                    catch 
+                    {
+                        Console.WriteLine("Kullanıcının adı yok");
+                    }
+                    
 
                     return Redirect("/Products");// Giriş yaptıktan sonra ürünler sayfasına yönlendiriyor
 
@@ -60,6 +74,7 @@ namespace OnlineCommerce_WEB.Controllers
         public RedirectResult Logout()
         {
             CurrentLoginEntity.IsLogin = false;
+            CurrentLoginEntity.Name = null;
             return Redirect("/Home"); // Çıkış yaptıktan sonra ana sayfaya yönlendiriyor.
         }
     }
