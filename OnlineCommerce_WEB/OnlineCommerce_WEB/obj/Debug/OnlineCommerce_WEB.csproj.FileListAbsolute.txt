@@ -79,7 +79,6 @@ C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.dll
 C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.pdb
-C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csprojResolveAssemblyReference.cache
 C:\Users\alp_1\GitHub Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\bin\ApplicationInsights.config
 C:\Users\alp_1\GitHub Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\bin\roslyn\csc.exe
 C:\Users\alp_1\GitHub Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -248,3 +247,4 @@ C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csproj.CopyComplete
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.dll
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.pdb
+C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csprojResolveAssemblyReference.cache

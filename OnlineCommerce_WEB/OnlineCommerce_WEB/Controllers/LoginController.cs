@@ -46,11 +46,18 @@ namespace OnlineCommerce_WEB.Controllers
                     try // Giriş yapan kullanıcı bilgilerini dolduruyoruz
                     {
                         var en = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
-                        CurrentLoginEntity.Name = en.Name;
+                        if (en != null)
+                        {
+                            CurrentLoginEntity.Name = en.Name;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Kullanıcının adı yok");
+                        }
                     }
-                    catch 
+                    catch(Exception e)
                     {
-                        Console.WriteLine("Kullanıcının adı yok");
+                        Console.WriteLine("Beklenmeyen bir hata oluştu.." + e.Message);
                     }
                     
 

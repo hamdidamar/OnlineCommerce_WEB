@@ -22,6 +22,7 @@
         <AssociationConnector Association="OnlineCommerceModel.FK_Products_Companies" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Companies_Accounts1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -121,14 +121,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Companies_Accounts">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Companies">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -251,6 +251,7 @@
           <NavigationProperty Name="Admins" Relationship="Self.FK_Admins_Accounts" FromRole="Accounts" ToRole="Admins" />
           <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Accounts" FromRole="Accounts" ToRole="Companies" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Accounts" FromRole="Accounts" ToRole="Customers" />
+          <NavigationProperty Name="Companies1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Accounts" ToRole="Companies" />
         </EntityType>
         <EntityType Name="AccountTypes">
           <Key>
@@ -293,6 +294,7 @@
           <Property Name="AccountID" Type="Int32" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK_Companies_Accounts" FromRole="Companies" ToRole="Accounts" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Companies" FromRole="Companies" ToRole="Products" />
+          <NavigationProperty Name="Accounts1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Companies" ToRole="Accounts" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -484,7 +486,23 @@
             <End Role="Products" EntitySet="Products" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
+          <AssociationSet Name="FK_Companies_Accounts1" Association="OnlineCommerceModel.FK_Companies_Accounts1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Companies_Accounts1">
+          <End Type="OnlineCommerceModel.Accounts" Role="Accounts" Multiplicity="0..1" />
+          <End Type="OnlineCommerceModel.Companies" Role="Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
