@@ -4,85 +4,63 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-<h4>Products</h4>
-<hr />
-
-<div>
-    @using (Html.BeginForm("AddToCart", "Orders", new { ReturnUrl = ViewBag.ReturnUrl, productID = Model.ID }, FormMethod.Post, new { @class = "login-form", role = "form" }))
-    {
-
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name) :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Cost) :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Cost)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Price) :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Stock) :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Stock)
-            </dd>
-
-            <dt>
-                @* @Html.DisplayNameFor(model => model.Categories.Name)*@
-                Category :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Categories.Name)
-            </dd>
-
-            <dt>
-                @*@Html.DisplayNameFor(model => model.Companies.Name)*@
-                Company :
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Companies.Name)
-            </dd>
-            <dt>
-                Amount :
-            </dt>
+    <h2 class="product-details-h">Details</h2>
+    <h4 class="product-details-h">Products</h4>
+    <hr />
 
 
-
-            <dd>
-                @Html.TextBoxFor(model => model.Amount)
-
-            </dd>
-
-
-        </dl>
-
-        <p>
-            @* @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
-            @* @Html.ActionLink("Back to List", "Index")*@
-        </p>
-
-        <input type="submit" value="Add to Cart" class="btn btn-success" />
+    <div class="product-details-card-div">
         
-    }
-</div>
+            <img class="product-image" src="~/Content/Images/iphone.jpg">
+        
+        @using (Html.BeginForm("AddToCart", "Orders", new { ReturnUrl = ViewBag.ReturnUrl, productID = Model.ID }, FormMethod.Post, new { @class = "product-details-card-form", role = "form" }))
+        {
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Name) :</td>
+                        <td>@Html.DisplayFor(model => model.Name)</td>
+
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Cost) :</td>
+                        <td>@Html.DisplayFor(model => model.Cost)</td>
+
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Price) :</td>
+                        <td>@Html.DisplayFor(model => model.Price)</td>
+
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Stock) :</td>
+                        <td>@Html.DisplayFor(model => model.Stock)</td>
+
+                    </tr>
+                    <tr>
+                        <td> @*@Html.DisplayNameFor(model => model.Categories.Name)*@ Category:</td>
+                        <td>@Html.DisplayFor(model => model.Categories.Name)</td>
+
+                    </tr>
+                    <tr>
+                        <td> @*@Html.DisplayNameFor(model => model.Companies.Name)*@Company:</td>
+                        <td>@Html.DisplayFor(model => model.Companies.Name)</td>
+
+                    </tr>
+                    <tr>
+                        <td>Amount:</td>
+                        <td> @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })</td>
+
+                    </tr>
+
+
+            </table>
+            <p>
+                @* @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+                @* @Html.ActionLink("Back to List", "Index")*@
+            </p>
+            <input type="submit" value="Add to Cart" class="btn" style="background-color:darkorange;" />
+
+        }
+    </div>
 

@@ -11,7 +11,8 @@
 
 .product-area {
     display: flex;
-    flex-basis: 45em;
+    flex-basis: 33%;
+    min-width:30em;
     height: 25em;
     justify-content: center;
 }
@@ -42,3 +43,30 @@
         justify-content: space-evenly;
         align-items: center;
     }
+    
+    .product-details-h{
+        text-align:center;
+      
+    }
+    .product-details-card-div {
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+    }
+    .product-image {
+         width: auto;
+         height: 27em;
+    }
+
+.product-details-card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 12em;
+    height:25em;
+    margin: 15px 0;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+    -moz-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+    box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+}

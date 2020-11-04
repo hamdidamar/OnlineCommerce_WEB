@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\Models\EntityFramework\OnlineCommerce.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\eyyup\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\Models\EntityFramework\OnlineCommerce.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
