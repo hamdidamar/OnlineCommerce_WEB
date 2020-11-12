@@ -26,3 +26,21 @@ textarea {
 
 .render-body {
 }
+
+.bi-cart-check-fill {
+    width: 4em;
+    height: 3em;
+    fill: #999999;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+    .bi-cart-check-fill > text {
+        transform: translate(11px, 2px);
+        font-size: xx-small;
+        fill: #999999;
+    }
+
+        .bi-cart-check-fill > text > a {
+            fill: #999999;
+        }
