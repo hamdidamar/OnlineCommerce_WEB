@@ -23,3 +23,6 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.render-body {
+}

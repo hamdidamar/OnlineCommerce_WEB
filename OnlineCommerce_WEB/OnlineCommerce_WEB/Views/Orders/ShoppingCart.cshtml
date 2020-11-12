@@ -3,53 +3,68 @@
     ViewBag.Title = "ShoppingCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="shopping-cart-area">
 
-<h2>My Shoppping Cart</h2>
-
-@if (TempData["shoppingList"] != null)
-{
-    <table class="table-bordered">
-        <thead>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Amount</th>
-        <th>Bill</th>
-        </thead>
-
-        <tbody>
-            @foreach (var item in TempData["shoppingList"] as List<OnlineCommerce_WEB.Models.ShoppingCart>)
-            {
+    @if (TempData["shoppingList"] != null)
+    {
+        <table class="table shopping-cart-table">
+            <thead class="alc-thead-dark">
                 <tr>
-                    <td>@item.productName</td>
-                    <td>@item.price</td>
-                    <td>@item.amount</td>
-                    <td>@item.bill</td>
-
-                    <form method="post"  action="@Url.Action("DeleteFromCart/"+ item.productID)">
-                        <td><button class="btn btn-danger">Delete</button></td>
-                    </form>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Bill</th>
+                    <th>Action</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in TempData["shoppingList"] as List<OnlineCommerce_WEB.Models.ShoppingCart>)
+                {
+                    <tr>
+                        <td>@item.productName</td>
+                        <td>@item.price</td>
+                        <td>@item.amount</td>
+                        <td>
+                            @item.bill
+                        </td>
+                        <td>
+                            <form method="post" action="@Url.Action("DeleteFromCart/"+ item.productID)">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
 
-        </tbody>
 
-        <tfoot>
-            <tr>
-                <td colspan="3"></td>
-                <td>
-                    <p style="text-align:center"> <b> Total Bill : @TempData["TotalBill"]</b> </p>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+                    </tr>
+                }
 
+            </tbody>
 
-}
-else
-{
-    <h4>Your shopping cart is empty</h4>
-}
+        </table>
+        <div class="card">
 
+            <!-- Card content -->
+            <div class="card-body">
+
+                <!-- Title -->
+                <h4 class="card-title">Total Bill</h4>
+                <!-- Text -->
+                <p class="card-text">
+                    <b>@TempData["TotalBill"]</b>
+                </p>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">Satın Al!</a>
+
+            </div>
+
+        </div>
+
+    }
+    else
+    {
+        <h4>Your shopping cart is empty</h4>
+    }
+
+</div>
 <script>
 
 </script>
