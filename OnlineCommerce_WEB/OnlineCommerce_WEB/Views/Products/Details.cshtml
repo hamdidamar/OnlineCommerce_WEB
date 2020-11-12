@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <td>Amount:</td>
-                        <td> @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })</td>
+                        <td> @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" , @type = "number", @min = 1, @max = Model.Stock})</td>
 
                     </tr>
 
