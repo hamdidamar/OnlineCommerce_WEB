@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+    overflow-x:hidden;
 }
 
     .profile-area > h2 {
@@ -11,6 +12,7 @@
 
     .profile-area > * {
         width: 60%;
+        min-width: 25em;
     }
 
 .information-area {
@@ -24,6 +26,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        padding: 0;
     }
 
 
@@ -35,9 +38,14 @@
     -moz-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
     box-shadow: 0 0 16px -5px rgba(255, 255, 255, 0.52);
     height: 150%;
-    align-items:center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.txt-white{
-    color:white;
+    .information-content label {
+        margin: 0;
+    }
+
+.txt-white {
+    color: white;
 }
