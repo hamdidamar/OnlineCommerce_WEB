@@ -23,7 +23,6 @@
 
 .shopping-cart-area {
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-bottom: 2em;
@@ -32,6 +31,7 @@
 .shopping-cart-table {
     flex-basis: 60%;
 }
+
 
 .card {
     flex-basis: 30%;
