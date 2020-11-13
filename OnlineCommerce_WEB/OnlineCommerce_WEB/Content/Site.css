@@ -44,3 +44,7 @@ textarea {
         .bi-cart-check-fill > text > a {
             fill: #999999;
         }
+
+.non-padding {
+    padding: 0 !important;
+}
