@@ -93,3 +93,50 @@ body {
         flex-basis: 33%;
         align-items: center;
     }
+
+
+.bg-dark {
+    background-color: #222222 !important;
+}
+.text-white {
+    color: #fff !important;
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.direction-row{
+    flex-direction: row!important;
+}
+
+.flex{
+    display:flex;
+}
+.contact-form {
+    height: 45em !important;
+    margin-bottom: 20px;
+}
+.contact-map{
+    width:70%;
+    height:100%
+}

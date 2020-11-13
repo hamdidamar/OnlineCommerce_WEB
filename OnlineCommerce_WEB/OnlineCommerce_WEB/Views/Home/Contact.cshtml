@@ -1,16 +1,29 @@
 ﻿@{
     ViewBag.Title = "Contact Page";
 }
-<h2>@ViewBag.Title.</h2>
 
 
-<address>
-    Hasan Ferdi Turgutlu Teknoloji Fakültesi<br />
-    Turgutlu / Manisa / Turkey<br />
-    <abbr title="Phone">Phone:</abbr>
-    05000000000
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">onlinecommerce@cbu.edu.tr</a><br />
-</address>
+
+
+
+
+<div class="card text-white bg-dark contact-form">
+    <div class="card-header"><h2 style="text-align:center">@ViewBag.Title</h2></div>
+    <div class="card-body direction-row">
+        <h3 class="card-title">Address</h3>
+        <address>
+            Hasan Ferdi Turgutlu Teknoloji Fakültesi<br />
+            Turgutlu / Manisa / Turkey<br />
+            <abbr title="Phone">Phone:</abbr>
+            05000000000
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">onlinecommerce@cbu.edu.tr</a><br />
+        </address>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">Map</h3>
+        <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6975609716087!2d27.70417035169874!3d38.49144989649455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9a791df45ce87%3A0xe32779b610d2d400!2sManisa%20Celal%20Bayar%20%C3%9Cniversitesi%20Hasan%20Ferdi%20Turgutlu%20Teknoloji%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1605268840229!5m2!1str!2str" width="800" height="100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</div>
