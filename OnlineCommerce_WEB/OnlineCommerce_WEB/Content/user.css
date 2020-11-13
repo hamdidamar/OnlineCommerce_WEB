@@ -1,0 +1,43 @@
+﻿.profile-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+    .profile-area > h2 {
+        text-align: center;
+    }
+
+    .profile-area > * {
+        width: 60%;
+    }
+
+.information-area {
+    width: 66%;
+    height: 100%;
+}
+
+    .information-area > ul {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+
+.information-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222222;
+    -webkit-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+    -moz-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+    box-shadow: 0 0 16px -5px rgba(255, 255, 255, 0.52);
+    height: 150%;
+    align-items:center;
+}
+
+.txt-white{
+    color:white;
+}

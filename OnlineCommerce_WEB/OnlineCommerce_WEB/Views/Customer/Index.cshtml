@@ -5,82 +5,89 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
 }
+<div class="profile-area">
 
-@if (CurrentLoginEntity.IsLogin)
-{
-    try
+    @if (CurrentLoginEntity.IsLogin)
     {
-        <h2>Hoşgeldin @CurrentLoginEntity.Name</h2>
-    }
-    catch
-    {
-        <h2 > Hoşgeldin @CurrentLoginEntity.Username</h2>
-    }
+        try
+        {
+            <h2>Hoşgeldin @CurrentLoginEntity.Name</h2>
+        }
+        catch
+        {
+            <h2> Hoşgeldin @CurrentLoginEntity.Username</h2>
+        }
 
-    OnlineCommerceEntities db = new OnlineCommerceEntities();
-    var customer = (from c in db.Customers where c.AccountID == CurrentLoginEntity.ID select c).FirstOrDefault();
+        OnlineCommerceEntities db = new OnlineCommerceEntities();
+        var customer = (from c in db.Customers where c.AccountID == CurrentLoginEntity.ID select c).FirstOrDefault();
 
-    if (customer != null)
-    {
+        if (customer != null)
+        {
+            <div class="card text-white bg-dark contact-form">
+                <div class="card-header"><h2 style="text-align:center">Bilgilerin</h2></div>
+                <div class="card-body">
 
-        <dl class="dl-horizontal">
-            <dt>
-               Name :
-            </dt>
+                    <div class="information-area">
+          
+                        <ul>
+                            <li>
+                                <div class="information-content flex">
+                                    <label>Name</label>
+                                    <p>@customer.Name</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information-content flex">
+                                    <label>Surname</label>
+                                    <p>@customer.Surname</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information-content flex">
+                                    <label>Phone</label>
+                                    <p>@customer.Phone</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information-content flex">
+                                    <label>Mail</label>
+                                    <p>@customer.Mail</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information-content flex">
+                                    <label>Address</label>
+                                    <p>@customer.Address</p>
+                                </div>
+                            </li>
 
-            <dd>
-                @customer.Name
-            </dd>
-            <dt>
-                Surname :
-            </dt>
+                        </ul>
 
-            <dd>
-                @customer.Surname
-            </dd>
-            <dt>
-                Phone :
-            </dt>
+                    </div>
+                    <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
+                        <button class="btn">Update</button>
+                    </form>
+                </div>
+            </div>
 
-            <dd>
-                @customer.Phone
-            </dd>
-            <dt>
-                Mail :
-            </dt>
+        }
+        else
+        {
+            <h2>Önce Bilgilerini Güncellemelisin</h2>
 
-            <dd>
-                @customer.Mail
-            </dd>
-            <dt>
-                Adress :
-            </dt>
+            <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
+                <button class="btn btn-info">Update</button>
+            </form>
 
-            <dd>
-                @customer.Address
-            </dd>
-        </dl>
 
-        <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
-            <button class="btn btn-info">Update</button>
-        </form>
+        }
     }
     else
     {
-        <h2>Önce Bilgilerini Güncellemelisin</h2>
-
-        <form method="get" action="@Url.Action("Edit/"+CurrentLoginEntity.ID)">
-            <button class="btn btn-info">Update</button>
-        </form>
-
-
+        <h2>Önce Giriş Yapmalısın!</h2>
     }
-}
-else
-{
-    <h2>Önce Giriş Yapmalısın!</h2>
-}
 
 
+</div>

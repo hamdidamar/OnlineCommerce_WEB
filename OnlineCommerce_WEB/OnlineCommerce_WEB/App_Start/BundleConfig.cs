@@ -29,7 +29,8 @@ namespace OnlineCommerce_WEB
                       "~/Content/login.css",
                       "~/Content/product.css",
                       "~/Content/home.css",
-                      "~/Content/shoppingCart.css"));
+                      "~/Content/shoppingCart.css",
+                       "~/Content/user.css"));
         }
     }
 }
