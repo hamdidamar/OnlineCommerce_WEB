@@ -21,10 +21,11 @@
         using (Html.BeginForm("Edit", "Customer", new { accountID = CurrentLoginEntity.ID }, FormMethod.Post, new { @class = "login-form-hidden", role = "form" }))
         {
             OnlineCommerceEntities db = new OnlineCommerceEntities();
+            var entity = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
 
-            try
+            if (entity != null)
             {
-                var entity = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
+
                 <div class="card text-white bg-dark contact-form">
                     <div class="card-header"><h2 style="text-align:center">Bilgilerin</h2></div>
                     <div class="card-body">
@@ -76,11 +77,8 @@
                 </div>
 
             }
-            catch
+            else
             {
-
-
-                var entity = (from e in db.Customers where e.AccountID == CurrentLoginEntity.ID select e).FirstOrDefault();
                 <div class="card text-white bg-dark contact-form">
                     <div class="card-header"><h2 style="text-align:center">Bilgilerin</h2></div>
                     <div class="card-body">
@@ -91,31 +89,31 @@
                                 <li>
                                     <div class="information-content flex">
                                         <label>Name</label>
-                                        <input id="Name" name="Name" type="text" value="@entity.Name" />
+                                        <input class="form-control bg-dark txt-white" id="Name" name="Name" type="text"  />
                                     </div>
                                 </li>
                                 <li>
                                     <div class="information-content flex">
                                         <label>Surname</label>
-                                        <input id="Surname" name="Surname" type="text" value="@entity.Surname" />
+                                        <input class="form-control bg-dark txt-white" id="Surname" name="Surname" type="text"  />
                                     </div>
                                 </li>
                                 <li>
                                     <div class="information-content flex">
                                         <label>Phone</label>
-                                        <input id="Phone" name="Phone" type="text" value="@entity.Phone" />
+                                        <input class="form-control bg-dark txt-white" id="Phone" name="Phone" type="text" />
                                     </div>
                                 </li>
                                 <li>
                                     <div class="information-content flex">
                                         <label>Mail</label>
-                                        <input id="Mail" name="Mail" type="text" value="@entity.Mail" />
+                                        <input class="form-control bg-dark txt-white" id="Mail" name="Mail" type="text"  />
                                     </div>
                                 </li>
                                 <li>
                                     <div class="information-content flex">
                                         <label>Address</label>
-                                        <input id="Address" name="Address" type="text" value="@entity.Address" />
+                                        <input class="form-control bg-dark txt-white" id="Address" name="Address" type="text"  />
 
                                     </div>
                                 </li>

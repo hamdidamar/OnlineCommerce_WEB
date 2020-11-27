@@ -14,7 +14,7 @@ namespace OnlineCommerce_WEB.Controllers
 
         public string Encrypt(string clearText) // Şifreleme fonksiyonu
         {
-            string EncryptionKey = "MAKV2SPBNI99212";
+            string EncryptionKey = "HACDE2020";
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
             using (Aes encryptor = Aes.Create())
             {
@@ -36,7 +36,7 @@ namespace OnlineCommerce_WEB.Controllers
 
         public string Decrypt(string cipherText) // Şifre çözme fonksiyonu
         {
-            string EncryptionKey = "MAKV2SPBNI99212";
+            string EncryptionKey = "HACDE2020";
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {

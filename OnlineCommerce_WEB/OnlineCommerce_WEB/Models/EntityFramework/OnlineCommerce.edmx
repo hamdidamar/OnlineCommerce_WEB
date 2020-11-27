@@ -121,14 +121,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Companies_Accounts">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Companies">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
