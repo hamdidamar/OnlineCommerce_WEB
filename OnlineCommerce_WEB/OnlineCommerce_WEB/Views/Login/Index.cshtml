@@ -29,7 +29,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
-                    @*<li>@Html.ActionLink("Accounts", "Index", "Accounts")</li>*@
+                    <li>@Html.ActionLink("Accounts", "Index", "Accounts")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -66,23 +66,25 @@
         @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
         {
             <div class="form-input">
-                @Html.LabelFor(m => m.Username)
+                <label>E-Mail</label>
                 <div>
-                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                    <input type="text" name="Username" class="form-control"  required />
                 </div>
             </div>
 
 
             <div class="form-input">
-                @Html.LabelFor(m => m.Password)
+                <label>Password</label>
                 <div>
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    <input type="password" name="Password" class="form-control" required />
                 </div>
             </div>
 
             <div class="form-button">
                 <p>
                     @Html.ActionLink("Register as a new user", "Create", "Accounts")
+                    <br />
+                    @Html.ActionLink("I Forgot My Password", "ForgotMyPassword", "Accounts")
                 </p>
                 <div>
                     <input type="submit" value="Log in" class="btn btn-warning" />

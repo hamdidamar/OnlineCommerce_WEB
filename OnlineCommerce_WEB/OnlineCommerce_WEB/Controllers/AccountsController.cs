@@ -88,66 +88,10 @@ namespace OnlineCommerce_WEB.Controllers
             return View(accounts);
         }
 
-        // GET: Accounts/Edit/5
-        /*public ActionResult Edit(int? id)
+        public ActionResult ForgotMyPassword([Bind(Include = "ID,Username,Password,AccountTypeID")] Accounts accounts)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Accounts accounts = db.Accounts.Find(id);
-            if (accounts == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "ID", "Name", accounts.AccountTypeID);
-            ViewBag.ID = new SelectList(db.Companies, "ID", "Name", accounts.ID);
-            return View(accounts);
+            return View();
         }
-
-        // POST: Accounts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Username,Password,AccountTypeID")] Accounts accounts)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(accounts).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "ID", "Name", accounts.AccountTypeID);
-            ViewBag.ID = new SelectList(db.Companies, "ID", "Name", accounts.ID);
-            return View(accounts);
-        }
-
-        // GET: Accounts/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Accounts accounts = db.Accounts.Find(id);
-            if (accounts == null)
-            {
-                return HttpNotFound();
-            }
-            return View(accounts);
-        }
-
-        // POST: Accounts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Accounts accounts = db.Accounts.Find(id);
-            db.Accounts.Remove(accounts);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }*/
 
         protected override void Dispose(bool disposing)
         {

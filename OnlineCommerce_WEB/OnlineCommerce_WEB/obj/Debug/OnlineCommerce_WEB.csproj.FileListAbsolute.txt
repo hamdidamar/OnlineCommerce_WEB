@@ -247,4 +247,6 @@ C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csproj.CopyComplete
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.dll
 C:\Users\eyyup\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.pdb
-C:\Users\hamdi\Source\Repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csprojResolveAssemblyReference.cache
+C:\Users\hamdi\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csprojAssemblyReference.cache
+C:\Users\hamdi\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csproj.CoreCompileInputs.cache
+C:\Users\hamdi\source\repos\OnlineCommerce_WEB\OnlineCommerce_WEB\OnlineCommerce_WEB\obj\Debug\OnlineCommerce_WEB.csproj.CopyComplete
