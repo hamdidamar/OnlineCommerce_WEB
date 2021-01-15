@@ -18,21 +18,22 @@
         <div class="form-input">
             <label>E-Mail</label>
             <div>
-                <input type="text" name="Username" class="form-control" required />
+                <input type="email" name="Username" class="form-control" required />
             </div>
         </div>
 
         <div class="form-input">
             <label>Password</label>
             <div>
-                <input type="password" name="Password" class="form-control"  required />
+                <input type="password" id="password" name="Password" class="form-control" required />
+                Show Password  <input type="checkbox" id="showPass" />
             </div>
+            
         </div>
 
         <div class="form-input">
-            <label>Confirm Password</label>
             <div>
-                <input type="password" name="Password2" class="form-control" required />
+                
             </div>
         </div>
 
@@ -46,6 +47,22 @@
 
     }
 </div>
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+
+            $("#showPass").change(function () {
+                var checked = $(this).is(":checked");
+                if (checked) {
+                    $("#password").attr("type", "text");
+                } else {
+                    $("#password").attr("type", "password");
+                }
+            });
+
+        });
+    </script>
 }
