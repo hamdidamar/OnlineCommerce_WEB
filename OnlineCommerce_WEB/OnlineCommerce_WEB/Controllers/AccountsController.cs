@@ -10,6 +10,7 @@ using OnlineCommerce_WEB.Models.EntityFramework;
 using System.Web.UI;
 using OnlineCommerce_WEB.ApiEntities;
 using OnlineCommerce_WEB.Apis;
+using System.Windows;
 
 namespace OnlineCommerce_WEB.Controllers
 {
@@ -88,9 +89,61 @@ namespace OnlineCommerce_WEB.Controllers
             return View(accounts);
         }
 
+        [HttpGet]
+        public ActionResult ForgotMyPassword()
+        {
+
+            return View();
+        }
+
+
+        [HttpPost]
         public ActionResult ForgotMyPassword([Bind(Include = "ID,Username,Password,AccountTypeID")] Accounts accounts)
         {
-            return View();
+
+            try
+            {
+                var password = (from user in db.Accounts
+                                where user.Username == accounts.Username
+                                select user.Password).FirstOrDefault();
+
+                Encryption enc = new Encryption();
+
+
+                SmtpMailEntity mailEntity = new SmtpMailEntity
+                {
+                    senderEMailAdress = "anonimepostam99@gmail.com",
+                    receiverEMailAdress = accounts.Username,
+                    senderMailUsername = "anonimepostam99@gmail.com",
+                    senderMailPassword = "a1999_1997",
+                    subject = "Forgot Password From E Commerce",
+                    body = "E Commerce Forgot Password"
+                            + Environment.NewLine
+                            + "Your password: " + enc.Decrypt(password)
+                            + Environment.NewLine
+                            + "Love,"
+                            + Environment.NewLine +
+                            "E Commerce Family"
+                };
+
+                SmtpMailApi smtpMailApi = SmtpMailApi.Instance;
+                smtpMailApi.SendEMail(mailEntity);
+
+                Response.Write("<script>alert('Şifreniz gönderilmiştir')</script>");
+
+                return RedirectToAction("Index", "Login");
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Response.Write("<script>alert('Şifreniz gönderilememiştir')</script>");
+               
+            }
+            return RedirectToAction("ForgotMyPassword", "Accounts");
+
+
         }
 
         protected override void Dispose(bool disposing)
